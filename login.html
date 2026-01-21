@@ -1,120 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Login Page</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        body {
-            height: 100vh;
-            background: linear-gradient(135deg, #4e54c8, #8f94fb);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .login-container {
-            background: #fff;
-            padding: 30px;
-            width: 320px;
-            border-radius: 10px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-
-        .login-container h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #333;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-size: 14px;
-            color: #555;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            font-size: 14px;
-        }
-
-        .form-group input:focus {
-            outline: none;
-            border-color: #4e54c8;
-        }
-
-        .login-btn {
-            width: 100%;
-            padding: 10px;
-            background: #4e54c8;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        .login-btn:hover {
-            background: #3b40a4;
-        }
-
-        .extra-links {
-            margin-top: 15px;
-            text-align: center;
-            font-size: 13px;
-        }
-
-        .extra-links a {
-            color: #4e54c8;
-            text-decoration: none;
-        }
-
-        .extra-links a:hover {
-            text-decoration: underline;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <div class="login-container">
-        <h2>Login</h2>
+  <div class="login-container">
+    <h2>Login</h2>
 
-        <form>
-            <div class="form-group">
-                <label>Email</label>
-                <input type="email" placeholder="Enter your email" required>
-            </div>
+    <form onsubmit="return validateLogin()">
+      <input type="text" id="username" placeholder="Username">
+      <input type="password" id="password" placeholder="Password">
+      <button type="submit">Login</button>
+      <p id="error"></p>
+    </form>
+  </div>
 
-            <div class="form-group">
-                <label>Password</label>
-                <input type="password" placeholder="Enter your password" required>
-            </div>
-
-            <button class="login-btn">Login</button>
-        </form>
-
-        <div class="extra-links">
-            <p><a href="#">Forgot Password?</a></p>
-            <p>Don't have an account? <a href="#">Sign Up</a></p>
-        </div>
-    </div>
-
+  <script src="script.js"></script>
 </body>
 </html>
